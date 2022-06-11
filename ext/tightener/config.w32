@@ -1,0 +1,7 @@
+ARG_ENABLE('tightener', 'tightener support', 'no');
+
+if (PHP_TIGHTENER != 'no') {
+	AC_DEFINE('HAVE_TIGHTENER', 1, 'tightener support enabled');
+
+	EXTENSION('tightener', 'tightener.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
